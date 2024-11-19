@@ -1,51 +1,30 @@
-:root {
-    --primary-color: #4caf50;
-    --secondary-color: #ffffff;
-    --font-family: 'Arial, sans-serif';
-    --shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+@import './variables.scss';
+
+body {
+  margin: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  background-color: $background-color;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $text-color;
+  text-shadow: $font-shadow;
+  font-weight: $font-weight-bold;
+}
+
+p, a, li, span, div {
+  color: $text-color;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+  transition: color $transition-duration $transition-ease;
+
+  &:hover {
+    color: $accent-dark;
   }
-  
-  body {
-    margin: 0;
-    font-family: var(--font-family);
-    background: linear-gradient(135deg, #ffffff, #e8f5e9);
-    color: #333;
-  }
-  
-  .header {
-    box-shadow: var(--shadow);
-    background: var(--primary-color);
-  }
-  
-  .hero {
-    text-align: center;
-    padding: 100px 20px;
-  }
-  
-  .card {
-    box-shadow: var(--shadow);
-    transition: transform 0.3s;
-    cursor: pointer;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
-    max-width: 500px;
-    margin: 10% auto;
-    padding: 20px;
-    background: var(--secondary-color);
-    border-radius: 10px;
-  }
-  
+}

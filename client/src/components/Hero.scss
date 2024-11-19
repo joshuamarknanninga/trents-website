@@ -1,83 +1,67 @@
 @import '../styles/variables.scss';
 @import '../styles/animations.scss';
 
-// Hero Section Styles
 .hero {
-  // Background gradient and subtle animation
-  background: linear-gradient(135deg, $primary-color, $background-color);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    $grey-light 0%,
+    $blue-light 50%,
+    $grey-medium 100%
+    
+  );
   background-size: 400% 400%;
-  animation: backgroundAnimation 15s ease infinite;
-
-  color: $secondary-color;
-  padding: $spacing-unit * 10 0;
+  animation: backgroundAnimation 15s $transition-ease infinite;
+  color: $text-color;
+  padding: calc($spacing-unit * 5) $spacing-unit;
+  padding-top: calc($spacing-unit * 5 + 80px);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(13, 71, 161, 0.7),
+      rgba(13, 71, 161, 0.3)
+    );
+    pointer-events: none;
+  }
+  
   .hero-content {
+    width: 100%;
     max-width: 800px;
-    padding: 0 $spacing-unit * 2;
+    padding: 0;
+
+    @media (min-width: $breakpoint-sm) {
+      padding: 0 $spacing-unit * 2;
+    }
   }
 
   .hero-title {
-    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: $spacing-unit * 2;
-    animation: swooshIn 2s $transition-ease forwards;
-    opacity: 0; // Start with opacity 0 for the animation
+    animation: fadeInDown 1s $transition-ease forwards;
+    opacity: 0;
+    color: $text-color;
+    text-shadow: $font-shadow;
   }
 
   .hero-subtitle {
-    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-size: clamp(1.25rem, 3vw, 2rem);
     margin-bottom: $spacing-unit * 4;
     animation: fadeInUp 1.5s $transition-ease forwards;
-    animation-delay: 1s;
-    opacity: 0; // Start with opacity 0 for the animation
-  }
-}
-
-// Keyframe Animations
-
-// Swoosh In Animation for the Title
-@keyframes swooshIn {
-  0% {
-    transform: translateX(-100%) scale(0.8);
+    animation-delay: 0.5s;
     opacity: 0;
-  }
-  50% {
-    transform: translateX(10%) scale(1.05);
-    opacity: 1;
-  }
-  70% {
-    transform: translateX(-5%) scale(0.95);
-  }
-  100% {
-    transform: translateX(0) scale(1);
-  }
-}
-
-// Fade In Up Animation for the Subtitle
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-// Background Animation for Subtle Movement
-@keyframes backgroundAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+    color: $text-color;
+    text-shadow: $font-shadow;
   }
 }

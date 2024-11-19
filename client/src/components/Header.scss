@@ -1,9 +1,8 @@
 @import '../styles/variables.scss';
 
 .header {
-  background-color: $primary-color;
+  background: $primary-color;
   color: $secondary-color;
-  box-shadow: $box-shadow-base;
   position: fixed;
   top: 0;
   width: 100%;
@@ -11,11 +10,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $spacing-unit * 2;
+  padding: $spacing-unit;
+  transition: background-color $transition-duration $transition-ease;
+
+  &.scrolled {
+    background: $primary-dark;
+  }
 
   .header-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: $font-weight-bold;
     margin: 0;
+    text-shadow: $font-shadow;
   }
 }

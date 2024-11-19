@@ -2,18 +2,20 @@
 @import '../styles/animations.scss';
 
 .card {
-  background-color: var(--secondary-color);
+  background-color: $secondary-color;
   border-radius: $border-radius-large;
   padding: $spacing-unit * 2;
   box-shadow: $box-shadow-base;
   transition: transform $transition-duration $transition-ease, box-shadow $transition-duration $transition-ease;
   cursor: pointer;
   margin: $spacing-unit;
+  color: $text-color;
 
   h3 {
     font-size: 1.5rem;
     margin-bottom: $spacing-unit;
     color: $text-color;
+    text-shadow: $font-shadow;
   }
 
   p {
@@ -23,9 +25,9 @@
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
   }
 
-  /* Apply fade-in animation */
+  // Apply fade-in animation
   animation: fadeIn $transition-duration $transition-ease forwards;
 }
