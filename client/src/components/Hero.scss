@@ -1,0 +1,83 @@
+@import '../styles/variables.scss';
+@import '../styles/animations.scss';
+
+// Hero Section Styles
+.hero {
+  // Background gradient and subtle animation
+  background: linear-gradient(135deg, $primary-color, $background-color);
+  background-size: 400% 400%;
+  animation: backgroundAnimation 15s ease infinite;
+
+  color: $secondary-color;
+  padding: $spacing-unit * 10 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .hero-content {
+    max-width: 800px;
+    padding: 0 $spacing-unit * 2;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: $spacing-unit * 2;
+    animation: swooshIn 2s $transition-ease forwards;
+    opacity: 0; // Start with opacity 0 for the animation
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: $spacing-unit * 4;
+    animation: fadeInUp 1.5s $transition-ease forwards;
+    animation-delay: 1s;
+    opacity: 0; // Start with opacity 0 for the animation
+  }
+}
+
+// Keyframe Animations
+
+// Swoosh In Animation for the Title
+@keyframes swooshIn {
+  0% {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(10%) scale(1.05);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-5%) scale(0.95);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+// Fade In Up Animation for the Subtitle
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Background Animation for Subtle Movement
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

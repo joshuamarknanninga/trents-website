@@ -1,0 +1,14 @@
+{
+    "name": "sustainable-process",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+      "client": "npm start --prefix client",
+      "server": "npm run dev --prefix server",
+      "start": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "dependencies": {
+      "concurrently": "^8.2.0"
+    }
+  }
+  
