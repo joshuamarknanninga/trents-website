@@ -27,4 +27,20 @@ a {
   &:hover {
     color: $accent-dark;
   }
+
+  .button {
+    background-color: $accent-color;
+    color: $secondary-color;
+    padding: $spacing-unit $spacing-unit * 2;
+    border: none;
+    border-radius: $border-radius-base;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color $transition-duration $transition-ease;
+  
+    &:hover {
+      background-color: $accent-dark;
+      animation: bounce 1s $transition-ease;
+    }
+  }
 }
