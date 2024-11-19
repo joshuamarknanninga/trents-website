@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaFacebookSquare, FaTwitterSquare, FaLinkedin } from 'react-icons/fa';
 import './Footer.scss';
 
 const Footer = () => (
@@ -12,14 +13,14 @@ const Footer = () => (
         </a>
       </div>
       <div className="footer-social">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-facebook-square"></i>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i className="FaFacebookSquare"></i>
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-twitter-square"></i>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="FaTwitterSquare">
+          <i className="FaTwitterSquare"></i>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-linkedin"></i>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="FaLinkedin">
+          <i className="FaLinkedin"></i>
         </a>
       </div>
       <div className="footer-info">
