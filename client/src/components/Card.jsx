@@ -1,9 +1,13 @@
+// Card.jsx
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import './Card.scss';
 
 const Card = ({ title, description, onClick }) => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
     <div

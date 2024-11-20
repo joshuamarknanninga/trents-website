@@ -26,11 +26,9 @@
     margin: $spacing-unit;
 
     a {
-      color: $secondary-color;
-      margin: 0 $spacing-unit / 2;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color $transition-duration $transition-ease;
+        color: $text-color;
+        font-size: 24px;
+        transition: color $transition-duration $transition-ease;
 
       &:hover {
         color: $accent-color;
