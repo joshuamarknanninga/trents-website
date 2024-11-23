@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Contact from './components/Contact'; // Import Contact component
+// import Contact from './components/Contact'; // Import Contact component
 import Footer from './components/Footer';
 import './index.css'; // Tailwind CSS
 
@@ -28,7 +28,6 @@ function App() {
             <p className="text-green-500 font-bold">{message}</p>
           </div>
         )}
-        <Contact /> {/* Add Contact component here */}
       </main>
       <Footer />
     </div>
