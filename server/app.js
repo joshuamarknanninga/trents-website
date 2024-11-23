@@ -1,15 +1,29 @@
+// server/app.js
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
+
 const app = express();
+const PORT = process.env.PORT || 5000;
 
-app.use(cors());
-app.use(bodyParser.json());
+// Middleware
+app.use(cors({
+  origin: 'http://localhost:3000', // Adjust if your client runs elsewhere
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+app.use(express.json());
 
-app.post('/contact', (req, res) => {
-  const { name, email, message } = req.body;
-  console.log(`Message from ${name} (${email}): ${message}`);
-  res.status(200).send({ success: true });
+// Routes
+const apiRoutes = require('./routes/api');
+app.use('/api', apiRoutes);
+
+// Root Route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Server!');
 });
 
-app.listen(5000, () => console.log('Server running on port 5000'));
+// Start the Server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
