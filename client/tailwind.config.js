@@ -1,9 +1,25 @@
-/** @type {import('tailwindcss').Config} */
+// client/tailwind.config.js
 module.exports = {
-  content: [],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'fade-in-down': 'fadeInDown 1s ease-out',
+        'fade-in-up': 'fadeInUp 1s ease-out',
+      },
+      keyframes: {
+        fadeInDown: {
+          '0%': { opacity: 0, transform: 'translateY(-20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+      },
+    },
   },
   plugins: [],
-}
-
+};
