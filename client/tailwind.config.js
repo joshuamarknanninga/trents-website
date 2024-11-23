@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'fade-in-down': 'fadeInDown 1s ease-out',
-        'fade-in-up': 'fadeInUp 1s ease-out',
+        'fade-in-down': 'fadeInDown 1s ease-out forwards',
+        'fade-in-up': 'fadeInUp 1s ease-out forwards',
       },
       keyframes: {
         fadeInDown: {
