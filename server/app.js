@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
-  origin: 'https://your-client-render-url.onrender.com', // To be updated after client deployment
+  // origin: 'https://your-client-render-url.onrender.com', // To be updated after client deployment
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
